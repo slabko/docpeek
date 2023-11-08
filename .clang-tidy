@@ -1,0 +1,90 @@
+Checks: >
+    *,
+
+    -abseil-*,
+    -altera-*,
+    -android-*,
+    boost-*,
+
+    bugprone-*,
+    -bugprone-easily-swappable-parameters,
+    -bugprone-unchecked-optional-access,
+
+    cert-*,
+    clang-analyzer-*,
+    concurrency-*,
+
+    cppcoreguidelines-*,
+    -cppcoreguidelines-avoid-magic-numbers,
+    -cppcoreguidelines-avoid-non-const-global-variables,
+    -cppcoreguidelines-owning-memory,
+    -cppcoreguidelines-pro-bounds-pointer-arithmetic, 
+    -cppcoreguidelines-pro-type-reinterpret-cast,
+    -cppcoreguidelines-pro-type-vararg,
+    -cppcoreguidelines-pro-type-union-access,
+    -cppcoreguidelines-pro-bounds-array-to-pointer-decay,
+
+    -darwin-*,
+    -fuchsia-*,
+    google-*,
+
+    hicpp-*,
+    -hicpp-signed-bitwise,
+    -hicpp-vararg,
+    -hicpp-no-array-decay,
+
+    -linuxkernel-*,
+    -llvm-*,
+    -llvmlibc-*,
+    misc-*,
+
+    modernize-*,
+    -modernize-use-trailing-return-type,
+    -modernize-pass-by-value,
+    -modernize-use-nodiscard,
+
+    -mpi-*,
+    -objc-*,
+    -openmp-*,
+    performance-*,
+    portability-*,
+
+    readability-*,
+    -readability-non-const-parameter,
+    -readability-identifier-length,
+    -readability-make-member-function-const,
+    -readability-magic-numbers,
+    -readability-uppercase-literal-suffix,
+    -readability-static-accessed-through-instance,
+    -readability-convert-member-functions-to-static,
+    -readability-function-cognitive-complexity,
+
+    -zircon-*,
+    -*-avoid-c-arrays,
+
+
+FormatStyle: 'file'
+
+CheckOptions:
+  - { key: bugprone-argument-comment.StrictMode,                             value: 1                  }
+  - { key: bugprone-exception-escape.FunctionsThatShouldNotThrow,            value: "WinMain,SDL_main" }
+  - { key: readability-identifier-naming.NamespaceCase,                      value: lower_case         }
+  - { key: readability-identifier-naming.ClassCase,                          value: CamelCase          }
+  - { key: readability-identifier-naming.StructCase,                         value: CamelCase          }
+  - { key: readability-identifier-naming.TemplateParameterCase,              value: CamelCase          }
+  - { key: readability-identifier-naming.FunctionCase,                       value: lower_case         }
+  - { key: readability-identifier-naming.VariableCase,                       value: lower_case         }
+  - { key: readability-identifier-naming.ClassMemberCase,                    value: lower_case         }
+  - { key: readability-identifier-naming.ClassMemberSuffix,                  value: _                  }
+  - { key: readability-identifier-naming.PrivateMemberSuffix,                value: _                  }
+  - { key: readability-identifier-naming.ProtectedMemberSuffix,              value: _                  }
+  - { key: readability-identifier-naming.EnumConstantCase,                   value: CamelCase          }
+  - { key: readability-identifier-naming.ConstexprVariableCase,              value: CamelCase          }
+  - { key: readability-identifier-naming.GlobalConstantCase,                 value: UPPER_CASE         }
+  - { key: readability-identifier-naming.StaticConstantCase,                 value: aNy_CasE           }
+  - { key: readability-implicit-bool-conversion.AllowIntegerConditions,      value: 1                  }
+  - { key: readability-implicit-bool-conversion.AllowPointerConditions,      value: 1                  }
+  - { key: readability-identifier-naming.TypeTemplateParameterIgnoredRegexp, value: expr-type          }
+  - key: misc-non-private-member-variables-in-classes.IgnoreClassesWithAllMemberVariablesBeingPublic
+    value: 1
+
